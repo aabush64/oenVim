@@ -1,8 +1,4 @@
-{
-  pkgs,
-  alejandra,
-  ...
-}: {
+_: {
   config.vim.lsp = {
     enable = true;
     formatOnSave = true;
@@ -14,6 +10,10 @@
     nvim-docs-view.enable = true;
 
     otter-nvim.enable = true;
+
+    # presets = {
+
+    # };
   };
 
   # Add rafware alejandra for spaces :D
@@ -61,13 +61,13 @@
     markdown = {
       enable = true;
       extensions.render-markdown-nvim.enable = true;
-      lsp.servers = ["markdown-oxide"];
+      lsp.servers = [ "markdown-oxide" ];
     };
     nix = {
       enable = true;
-      lsp.servers = ["nixd"]; # Might delete later /ref
+      lsp.servers = [ "nil" ]; # Might delete later /ref
       # format.enable = false; # Porting a custom alejandra
-      format.type = ["nixfmt"];
+      format.type = [ "nixfmt" ];
     };
     nu.enable = true;
     python.enable = true;

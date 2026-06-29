@@ -16,7 +16,6 @@ _: {
     };
 
     spellcheck.enable = true;
-    spellcheck.programmingWordlist.enable = true;
 
     theme = {
       enable = true;
