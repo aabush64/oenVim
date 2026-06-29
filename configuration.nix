@@ -22,5 +22,11 @@ _: {
       name = "gruvbox";
       style = "dark";
     };
+
+    options = {
+      autoindent = true;
+      shiftwidth = 2;
+      tabstop = 2;
+    };
   };
 }
