@@ -1,4 +1,8 @@
-{pkgs, alejandra, ...}: {
+{
+  pkgs,
+  alejandra,
+  ...
+}: {
   config.vim.lsp = {
     enable = true;
     formatOnSave = true;
@@ -13,24 +17,25 @@
   };
 
   # Add rafware alejandra for spaces :D
-  config.vim.formatter.conform-nvim =
-  let
-    inherit (pkgs.lib.meta) getExe;
-  in
-  {
-    enable = true;
-    setupOpts = {
-      formatters_by_ft.nix = "alejandra";
-      formatters = {
-        # Damn this ugly
-        alejandra.command = "${getExe alejandra} --experimental-config ${./alejandra.toml}";
-      };
-    };
-  };
+  # Mission failed, we'll get em next time
+  # config.vim.formatter.conform-nvim =
+  # let
+  #   inherit (pkgs.lib.meta) getExe;
+  # in
+  # {
+  #   enable = true;
+  #   setupOpts = {
+  #     formatters_by_ft.nix = "alejandra";
+  #     formatters = {
+  #       # Damn this ugly
+  #       alejandra.command = "${getExe alejandra} --experimental-config ${./alejandra.toml}";
+  #     };
+  #   };
+  # };
 
   config.vim.languages = {
     # Set defaults
-    enableDap = true;
+    enableDAP = true;
     enableExtraDiagnostics = true;
     enableFormat = true;
 
@@ -60,8 +65,9 @@
     };
     nix = {
       enable = true;
-      lsp.servers = [ "nixd" ]; # Might delete later /ref
-      format.enable = false; # Porting a custom alejandra
+      lsp.servers = ["nixd"]; # Might delete later /ref
+      # format.enable = false; # Porting a custom alejandra
+      format.type = ["nixfmt"];
     };
     nu.enable = true;
     python.enable = true;

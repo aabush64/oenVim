@@ -30,7 +30,7 @@
             ./pwugins.nix
           ];
           extraSpecialArgs = {
-            alejandra = inputs.alejandra.defaultPackge.${system};
+            alejandra = inputs.alejandra.packages.${system}.alejandra-binaries;
           };
         }).neovim;
     };
