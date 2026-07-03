@@ -1,6 +1,6 @@
 _: {
   config.vim = {
-    lineNumberMode = "number";
+    # lineNumberMode = "number";
     bell = "visual";
     searchCase = "smart";
     viAlias = true;
