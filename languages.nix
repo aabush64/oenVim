@@ -48,7 +48,11 @@ _: {
     # lsp.enable = true;
     # treesitter.enable = true;
 
-    # csharp = {}; # Only enable if you do SS14 stuff again that module is a *mess*
+    csharp = {
+      enable = true;
+      extensions.csharpls-extended-lsp-nvim.enable = true;
+      format.type = [ "csharpier" ];
+    }; # Only enable if you do SS14 stuff again that module is a *mess*
     css.enable = true;
     env.enable = true;
     fish.enable = true;
